@@ -37,6 +37,7 @@ npm run test:smoke
 ### Running the tests in the specific browsers
 
 We have an opportunity to run tests against 5 different browsers(by default all of them are used).
+
 To run the tests on `desktop chrome` only:
 
 ```
