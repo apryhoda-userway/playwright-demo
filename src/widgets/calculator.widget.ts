@@ -1,27 +1,27 @@
-import { Locator, Page } from '@playwright/test'
+import { Locator, Page } from '@playwright/test';
 
 export class CalculatorWidget {
-    readonly widgetContainer: Locator
-    readonly dataField: Locator
-    readonly clearButton: Locator
-    readonly addOperatorButton: Locator
-    readonly subtractOperatorButton: Locator
-    readonly multiplyOperatorButton: Locator
-    readonly devideOperatorButton: Locator
-    readonly calculateOperatorButton: Locator
+    readonly widgetContainer: Locator;
+    readonly dataField: Locator;
+    readonly clearButton: Locator;
+    readonly addOperatorButton: Locator;
+    readonly subtractOperatorButton: Locator;
+    readonly multiplyOperatorButton: Locator;
+    readonly devideOperatorButton: Locator;
+    readonly calculateOperatorButton: Locator;
 
     constructor(public page: Page) {
-        this.widgetContainer = page.getByTestId('calculator')
-        this.dataField = this.widgetContainer.getByTestId('display')
-        this.clearButton = this.widgetContainer.getByTestId('clearButton')
-        this.addOperatorButton = this.widgetContainer.getByTestId('add')
+        this.widgetContainer = page.getByTestId('calculator');
+        this.dataField = this.widgetContainer.getByTestId('display');
+        this.clearButton = this.widgetContainer.getByTestId('clearButton');
+        this.addOperatorButton = this.widgetContainer.getByTestId('add');
         this.subtractOperatorButton =
-            this.widgetContainer.getByTestId('subtract')
+            this.widgetContainer.getByTestId('subtract');
         this.multiplyOperatorButton =
-            this.widgetContainer.getByTestId('multiply')
-        this.devideOperatorButton = this.widgetContainer.getByTestId('divide')
+            this.widgetContainer.getByTestId('multiply');
+        this.devideOperatorButton = this.widgetContainer.getByTestId('divide');
         this.calculateOperatorButton =
-            this.widgetContainer.getByTestId('calculate')
+            this.widgetContainer.getByTestId('calculate');
     }
 
     /**
@@ -43,9 +43,9 @@ export class CalculatorWidget {
                     await this.widgetContainer
                         .locator(`"${el}"`)
                         .click({ force: true })
-            )
+            );
 
-        return this
+        return this;
     }
 
     /**
@@ -71,14 +71,14 @@ export class CalculatorWidget {
     async sum(...args: number[]): Promise<CalculatorWidget> {
         if (args.length) {
             for (let arg of args) {
-                await this.addOperatorButton.click({ force: true })
-                await this.enterNumber(arg)
+                await this.addOperatorButton.click({ force: true });
+                await this.enterNumber(arg);
             }
         } else if (!args.length) {
-            await this.addOperatorButton.click({ force: true })
+            await this.addOperatorButton.click({ force: true });
         }
 
-        return this
+        return this;
     }
 
     /**
@@ -104,14 +104,14 @@ export class CalculatorWidget {
     async subtract(...args: number[]): Promise<CalculatorWidget> {
         if (args.length) {
             for (let arg of args) {
-                await this.subtractOperatorButton.click({ force: true })
-                await this.enterNumber(arg)
+                await this.subtractOperatorButton.click({ force: true });
+                await this.enterNumber(arg);
             }
         } else if (!args.length) {
-            await this.subtractOperatorButton.click({ force: true })
+            await this.subtractOperatorButton.click({ force: true });
         }
 
-        return this
+        return this;
     }
 
     /**
@@ -137,14 +137,14 @@ export class CalculatorWidget {
     async multiply(...args: number[]): Promise<CalculatorWidget> {
         if (args.length) {
             for (let arg of args) {
-                await this.multiplyOperatorButton.click({ force: true })
-                await this.enterNumber(arg)
+                await this.multiplyOperatorButton.click({ force: true });
+                await this.enterNumber(arg);
             }
         } else if (!args.length) {
-            await this.multiplyOperatorButton.click({ force: true })
+            await this.multiplyOperatorButton.click({ force: true });
         }
 
-        return this
+        return this;
     }
 
     /**
@@ -170,14 +170,14 @@ export class CalculatorWidget {
     async divide(...args: number[]): Promise<CalculatorWidget> {
         if (args.length) {
             for (let arg of args) {
-                await this.devideOperatorButton.click({ force: true })
-                await this.enterNumber(arg)
+                await this.devideOperatorButton.click({ force: true });
+                await this.enterNumber(arg);
             }
         } else if (!args.length) {
-            await this.devideOperatorButton.click({ force: true })
+            await this.devideOperatorButton.click({ force: true });
         }
 
-        return this
+        return this;
     }
 
     /**
@@ -191,9 +191,9 @@ export class CalculatorWidget {
      * @returns
      */
     async calculate(): Promise<CalculatorWidget> {
-        await this.calculateOperatorButton.click({ force: true })
+        await this.calculateOperatorButton.click({ force: true });
 
-        return this
+        return this;
     }
 
     /**
@@ -215,8 +215,8 @@ export class CalculatorWidget {
     async clearField(clearAll?: boolean): Promise<CalculatorWidget> {
         clearAll
             ? await this.clearButton.click({ force: true, clickCount: 2 })
-            : await this.clearButton.click({ force: true })
+            : await this.clearButton.click({ force: true });
 
-        return this
+        return this;
     }
 }
