@@ -52,7 +52,6 @@ export default defineConfig({
             fullPage: true,
         },
         testIdAttribute: 'name',
-        // channel: "chrome"
     },
 
     /* Configure projects for major browsers */
