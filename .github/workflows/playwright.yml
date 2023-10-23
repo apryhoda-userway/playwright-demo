@@ -29,9 +29,3 @@ jobs:
                   name: playwright-report
                   path: output/html-report/
                   retention-days: 30
-            - uses: actions/upload-artifact@v3
-              if: always()
-              with:
-                  name: allure-report
-                  path: output/allure-report/
-                  retention-days: 30

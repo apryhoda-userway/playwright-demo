@@ -29,14 +29,6 @@ export default defineConfig({
             },
         ],
         ['list'],
-        [
-            'allure-playwright',
-            {
-                detail: true,
-                outputFolder: 'output/allure-results',
-                suiteTitle: true,
-            },
-        ],
     ],
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {

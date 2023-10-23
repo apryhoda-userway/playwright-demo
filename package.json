@@ -4,13 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "allure:generate": "allure generate ./output/allure-results -o output/allure-report --clean",
-        "allure:open": "allure open ./output/allure-report",
-        "allure:serve": "allure serve",
-        "test": "npx playwright test || :",
+        "test": "npx playwright test",
         "test:debug": "npx playwright test --debug",
         "test:ui": "npx playwright test --ui",
-        "posttest": "npm run allure:generate",
         "clean": "rm -rf node_modules && npm install",
         "prepare": "husky install"
     },
@@ -20,7 +16,6 @@
     "devDependencies": {
         "@playwright/test": "^1.39.0",
         "@types/node": "^20.8.7",
-        "allure-playwright": "^2.9.2",
         "dotenv": "^16.3.1",
         "husky": "^8.0.3",
         "lint-staged": "^15.0.2",
