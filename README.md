@@ -36,7 +36,7 @@ npm run test:smoke
 
 ### Running the tests in the specific browsers
 
-Also we have an opportunity to run tests against 5 different browsers(by default all of them are used).
+We have an opportunity to run tests against 5 different browsers(by default all of them are used).
 To run the tests on `desktop chrome` only:
 
 ```
@@ -69,7 +69,7 @@ npm run test:mobile-safari
 
 ### Running the tests in the specific modes
 
-Also we can run the tests in `debug` or `ui` mode:
+We can run the tests in `debug` or `ui` mode:
 
 ```
 npm run test:debug
