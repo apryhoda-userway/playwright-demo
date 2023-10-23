@@ -5,8 +5,16 @@
     "main": "index.js",
     "scripts": {
         "test": "npx playwright test",
+        "test:sanity": "npx playwright test specs/sanity",
+        "test:smoke": "npx playwright test specs/smoke",
+        "test:chrome": "npx playwright test --project=chromium",
+        "test:firefox": "npx playwright test --project=firefox",
+        "test:safari": "npx playwright test --project=safari",
+        "test:mobile-chrome": "npx playwright test --project=mobile-chrome",
+        "test:mobile-safari": "nnpx playwright test --project=mobile-safari",
         "test:debug": "npx playwright test --debug",
         "test:ui": "npx playwright test --ui",
+        "test:show-report": "npx playwright show-report output/html-report",
         "clean": "rm -rf node_modules && npm install",
         "prepare": "husky install"
     },
